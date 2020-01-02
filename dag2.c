@@ -53,16 +53,16 @@ double calculate_volume_on_barrel(double diameter, int length) {
 void print_volume_to_length(double volume){
     int i = 0;
     double diameter = 0;
-    for (i = 0; i < 10; i++) {
+    for (i = 1; i <= 10; i++) {
         diameter = (0.28 + i/100);
-        printf("%.2lf mm. tykkelse | %.2lf meter laengde\n", diameter, calculate_length_from_volume(diameter, volume));
+        printf("|%.2lf mm. tykkelse | %.2lf meter laengde|\n", diameter, calculate_length_from_volume(diameter, volume));
     }
 }
 
 /* Skal udregne laengde af forskellige tykkelse snoerer */
 double calculate_length_from_volume(double diameter, double volume){
     double length = 0;
-    length = (volume / (pow(diameter/2, 2) * M_PI));
+    length = (volume / (pow(diameter / 2, 2) * M_PI));
     length *= CENTIMETER_TO_METER;
     return length;
 }
