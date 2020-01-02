@@ -15,7 +15,7 @@ double calculate_length_from_volume(double diameter, double volume);
 int main() {
     int lineLength = 0;
     double lineDiameter = 0, volume = 0;
-    
+    printf("For at kunne udregne snoerelaengder skal jeg bruge en standard fra producenten.\n");
     lineDiameter = prompt_for_diameter();
     lineLength   = prompt_for_length();
     volume = calculate_volume_on_barrel(lineDiameter, lineLength);
@@ -28,18 +28,19 @@ int main() {
 
 double prompt_for_diameter() {
     double diameter = 0;
-    printf("Hvilken bredde fiskesnoere, i mm, oensker du? \n");
+    printf("Bredde af snoere:\n");
     scanf(" %lf", &diameter);
     return diameter;
 }
 
 int prompt_for_length() {
     int length = 0;
-    printf("Hvilken laengde fiskesnoere, i meter, oensker du? \n");
+    printf("Stoerste laengde:\n");
     scanf(" %d", &length);
     return length;
 }
 
+/* Skal udregne volumen omkring tromlen */
 double calculate_volume_on_barrel(double diameter, int length) {
     double volume = 0;
     diameter = diameter / MILLIMETER_TO_CENTIMETER;
@@ -51,8 +52,10 @@ double calculate_volume_on_barrel(double diameter, int length) {
 /* Skal printe en tabel med nogle forskellige snoeretykkelser og deres laengeste laengde */
 void print_volume_to_length(double volume){
     int i = 0;
+    double diameter = 0;
     for (i = 0; i < 10; i++) {
-        printf("%.2lf mm. tykkelse....%.2lf meter laengde\n", (0.28 + i/100), calculate_length_from_volume((0.28 + i/100), volume));
+        diameter = (0.28 + i/100);
+        printf("%.2lf mm. tykkelse | %.2lf meter laengde\n", diameter, calculate_length_from_volume(diameter, volume));
     }
 }
 
