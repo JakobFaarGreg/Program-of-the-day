@@ -7,7 +7,7 @@ void number_choice(int* playerChoice);
 int color_choice();
 void print_result(int playerChoice);
 
-enum colors {Roed = 3, Groen = 2, Blaa = 3, Hvid = 3};
+enum colors {Roed = 3, Groen = 2, Blaa = 3, Hvid = 2};
 
 int main() {
     int playerChoice = 0, countdown = 4;
