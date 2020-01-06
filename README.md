@@ -6,4 +6,5 @@ I want to have a catalogue of finished programs and I want to be proficient in u
 
 Ideer: 
 Stable korthus - et randomized tal bestemmer om huset falder eller ej
+
 Spille Gris - spillet hvor man kaster en plastik gris op i luften.
