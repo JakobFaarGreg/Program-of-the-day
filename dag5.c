@@ -18,7 +18,7 @@ int main(){
     print_andet_niveau();
     print_foerste_niveau();
 
-    return 0; 
+    return EXIT_SUCCESS; 
 }
 
 void print_venstre(){
