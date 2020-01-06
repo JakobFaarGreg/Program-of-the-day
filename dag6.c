@@ -11,7 +11,7 @@ void print_first_level();
 void print_2_left();
 void print_2_right();
 void print_second_level();
-void print_failure();
+/* void print_failure(); */
 
 int main(){
     int i = 0; 
@@ -115,8 +115,7 @@ void print_second_level(){
     printf("  /");
     printf("\\  ");
 }
-
-void print_failure(){
+/* void print_failure(){
     printf("     \\    /  \\    /  \\    /  \\    /  \\    /  \n");
     printf("      \\  /    \\  /    \\  /    \\  /    \\  /    \n");
     printf("       \\/      \\/      \\/      \\/      \\/      \n");
@@ -124,4 +123,4 @@ void print_failure(){
     printf("      /  \\    /  \\    /  \\    /  \\    /  \\    \n");
     printf("     /    \\  /    \\  /    \\  /    \\  /    \\  \n");
     printf("    /      \\/      \\/      \\/      \\/      \\\n");
-}
+} */
