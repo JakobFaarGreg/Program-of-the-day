@@ -30,7 +30,6 @@ int main(){
                 print_2_left();
                 print_first_level();
                 print_bottom_level();
-                printf("Only one more left!");
             }
             else {
                 print_first_level();
