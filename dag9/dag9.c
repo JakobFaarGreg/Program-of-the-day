@@ -6,29 +6,47 @@
 
 struct boardgame {
     int rating;
-    char *name;
+    char name[MAX_STRING_LENGTH];
 };
 typedef struct boardgame boardgame;
 boardgame array[MAX_NUMBER_GAMES];
 
+int compare(const void *p1, const void *p2);
+
 int main() {
     int i = 0;
+    /* Her opretter jeg en fil-pointer og peger den på den åbne fil dag9.txt i 'read'-mode. */
     FILE *boardgame_ptr;
-    char boardgame_str[MAX_STRING_LENGTH], ch[3];;
-
     boardgame_ptr = fopen("dag9.txt", "r");
 
+    /* Her tjekker jeg om filpointeren virker */
     if (boardgame_ptr != NULL) {
         for (i = 0; i < MAX_NUMBER_GAMES; i++) {
-            fgets(boardgame_str, MAX_STRING_LENGTH, boardgame_ptr);
-            printf("%s\n", boardgame_str);
-            fscanf(boardgame_ptr, "%d %[^QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm] %s;", &array[i].rating, ch, array[i].name);
+            /* Her indlæser jeg rating og navn af brætspillet i elementerne i det i'te boardgame i arrayet. */
+            fscanf(boardgame_ptr, " %d - %s", &array[i].rating, array[i].name);
         }
     }
-    /*
+    /* Her sorterer jeg brætspillene så de kommer i rækkefølge. */
+    qsort(array, 10, sizeof(boardgame), compare);
+
+    /* Her printer jeg hvert brætspil enkeltvis. */
     for (i = 0; i < MAX_NUMBER_GAMES; i++){
-        printf(" The game: '%s' I've given the rating: %d \n", array[i].name, array[i].rating);
-    }*/
+        printf(" The game: %-13s I've given the rating: %d out of 10 \n", array[i].name, array[i].rating);
+    }
+    /* Og jeg husker at lukke filen igen. */
     fclose(boardgame_ptr);
+
     return EXIT_SUCCESS;
+}
+
+/* Taget fra https://stackoverflow.com/questions/6105513/need-help-using-qsort-with-an-array-of-structs */
+int compare(const void *p1, const void *p2) {
+    const struct boardgame *elem1 = p1;    
+    const struct boardgame *elem2 = p2;
+   if (elem1->rating < elem2->rating)
+      return -1;
+   else if (elem1->rating > elem2->rating)
+      return 1;
+   else
+      return 0;
 }
