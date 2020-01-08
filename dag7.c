@@ -1,4 +1,4 @@
-/* Put a deck of cards in numerical order, high to low */
+/* Put a deck of cards in numerical order */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -13,61 +13,19 @@ typedef struct kort kort;
 
 int main() {
     int i = 0;
-    kort    joker1 =  {25,  "N/A"},
-        joker2 =  {25,  "N/A"},
-        joker3 =  {25,  "N/A"},
-        HJack  =  {11,  "H"},
-        HQueen =  {12,  "H"},
-        HKing  =  {13,  "H"},
-        HAce   =  {14,  "H"},
-        DJack  =  {11,  "D"},
-        DQueen =  {12,  "D"},
-        DKing  =  {13,  "D"},
-        DAce   =  {14,  "D"},
-        CJack  =  {11,  "C"},
-        CQueen =  {12,  "C"},
-        CKing  =  {13,  "C"},
-        CAce   =  {14,  "C"},
-        SJack  =  {11,  "S"},
-        SQueen =  {12,  "S"},
-        SKing  =  {13,  "S"},
-        SAce   =  {14,  "S"},
-        Htwo = {2, "H"},
-        Hthree = {3, "H"},
-        Hfour = {4, "H"},
-        Hfive = {5, "H"},
-        Hsix = {6, "H"},
-        Hseven = {7, "H"},
-        Height = {8, "H"},
-        Hnine = {9, "H"},
-        Hten = {10, "H"},
-        Dtwo = {2, "D"},
-        Dthree = {3, "D"},
-        Dfour = {4, "D"},
-        Dfive = {5, "D"},
-        Dsix = {6, "D"},
-        Dseven = {7, "D"},
-        Deight = {8, "D"},
-        Dnine = {9, "D"},
-        Dten = {10, "D"},
-        Ctwo = {2, "C"},
-        Cthree = {3, "C"},
-        Cfour = {4, "C"},
-        Cfive = {5, "C"},
-        Csix = {6, "C"},
-        Cseven = {7, "C"},
-        Ceight = {8, "C"},
-        Cnine = {9, "C"},
-        Cten = {10, "C"},
-        Stwo = {2, "S"},
-        Sthree = {3, "S"},
-        Sfour = {4, "S"},
-        Sfive = {5, "S"},
-        Ssix = {6, "S"},
-        Sseven = {7, "S"},
-        Seight = {8, "S"},
-        Snine = {9, "S"},
-        Sten = {10, "S"};
+    kort    joker1 =  {25,  "N/A"}, joker2 =  {25,  "N/A"}, joker3 =  {25,  "N/A"},
+            HJack  =  {11,  "H"}, HQueen =  {12,  "H"}, HKing  =  {13,  "H"}, HAce   =  {14,  "H"},
+            DJack  =  {11,  "D"}, DQueen =  {12,  "D"}, DKing  =  {13,  "D"}, DAce   =  {14,  "D"},
+            CJack  =  {11,  "C"}, CQueen =  {12,  "C"}, CKing  =  {13,  "C"}, CAce   =  {14,  "C"},
+            SJack  =  {11,  "S"}, SQueen =  {12,  "S"}, SKing  =  {13,  "S"}, SAce   =  {14,  "S"},
+            Htwo = {2, "H"}, Hthree = {3, "H"}, Hfour = {4, "H"}, Hfive = {5, "H"},
+            Hsix = {6, "H"}, Hseven = {7, "H"}, Height = {8, "H"}, Hnine = {9, "H"}, Hten = {10, "H"},
+            Dtwo = {2, "D"}, Dthree = {3, "D"}, Dfour = {4, "D"}, Dfive = {5, "D"},
+            Dsix = {6, "D"}, Dseven = {7, "D"}, Deight = {8, "D"}, Dnine = {9, "D"}, Dten = {10, "D"},
+            Ctwo = {2, "C"}, Cthree = {3, "C"}, Cfour = {4, "C"}, Cfive = {5, "C"},
+            Csix = {6, "C"}, Cseven = {7, "C"}, Ceight = {8, "C"}, Cnine = {9, "C"}, Cten = {10, "C"},
+            Stwo = {2, "S"}, Sthree = {3, "S"}, Sfour = {4, "S"}, Sfive = {5, "S"},
+            Ssix = {6, "S"}, Sseven = {7, "S"}, Seight = {8, "S"}, Snine = {9, "S"}, Sten = {10, "S"};
 
     kort arr[55];
     arr[0] = joker1;
@@ -127,13 +85,11 @@ int main() {
     arr[54]   = Sten;
     qsort(arr.number, 54, sizeof(int), cmpfunc);
 
-
     for (i = 0; i < 55; i++) {
         printf("%d is a %s \n", arr[i].number, arr[i].suit);
     }
     return EXIT_SUCCESS;
 }
-
 int cmpfunc (const void * a, const void * b) {
    return ( *(int*)a - *(int*)b );
 }
