@@ -3,30 +3,47 @@
 #include <stdlib.h>
 #define NAME_MAX_LENGTH 10
 
-int cmpfunc (const void * a, const void * b);
+int compare(const void *p1, const void *p2);
 
 struct person {
     int age;
-    char name[NAME_MAX_LENGTH];
+    char *name;
 };
 typedef struct person person;
+person List[4];
 
 int main() {
+    int i = 0;
     person  p1 = {23, "Jakob"},
             p2 = {51, "Lis"},
             p3 = {49, "Morten"},
             p4 = {25, "Kristine"};
-    printf(" %d - %s\n", p1.age, p1.name);
-    printf(" %d - %s\n", p2.age, p2.name);
-    printf(" %d - %s\n", p3.age, p3.name);
-    printf(" %d - %s\n", p4.age, p4.name);
-
+    List[0] = p1;
+    List[1] = p2;
+    List[2] = p3;
+    List[3] = p4;
+    printf("Before sorting: \n");
     for (i = 0; i < 4; i++) {
-        printf(" %d - %s\n", p1.age, p1.name);
+        printf(" %d - %s\n", List[i].age, List[i].name);
     }
+    /* kald af sorteringsfunktion qsort på struct */
+    qsort(List, 4, sizeof(person), compare);
 
+    printf("\nAfter sorting: \n");
+    for (i = 0; i < 4; i++) {
+        printf(" %d - %s\n", List[i].age, List[i].name);
+    }
     return EXIT_SUCCESS;
 }
-int cmpfunc (const void * a, const void * b) {
-   return ( *(int*)a - *(int*)b );
+/* Taget fra https://stackoverflow.com/questions/6105513/need-help-using-qsort-with-an-array-of-structs */
+int compare(const void *p1, const void *p2) {
+    const struct person *elem1 = p1;    
+    const struct person *elem2 = p2;
+
+   if (elem1->age < elem2->age)
+      return -1;
+   else if (elem1->age > elem2->age)
+      return 1;
+   else
+      return 0;
 }
