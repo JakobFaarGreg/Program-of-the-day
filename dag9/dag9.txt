@@ -1,10 +1,10 @@
-10 - Dungeons & Dragons;
-9 - Ligretto;
-8 - Hint;
-7 - Bezzerwisser;
-6 - Stratego;
-5 - Scrabble;
-4 - Partners;
-3 - Ludo;
-2 - Settlers;
-1 - Matador;
+7 - Bezzerwisser
+1 - Matador
+10 - D&D
+5 - Scrabble
+3 - Ludo
+6 - Stratego
+2 - Settlers
+8 - Hint
+4 - Partners
+9 - Ligretto
