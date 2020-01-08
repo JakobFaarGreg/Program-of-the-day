@@ -39,7 +39,6 @@ int main() {
 int compare(const void *p1, const void *p2) {
     const struct person *elem1 = p1;    
     const struct person *elem2 = p2;
-
    if (elem1->age < elem2->age)
       return -1;
    else if (elem1->age > elem2->age)
