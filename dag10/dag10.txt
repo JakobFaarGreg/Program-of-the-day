@@ -1,0 +1,10 @@
+Hyde_Park - 7 - 20000 - 0
+Oesteraadalen - 4 - 3000 - 0
+Oerstedparken - 3 - 2000 - 0
+Central_Park - 8 - 30000 - 0
+Kildeparken - 1 - 150 - 0
+Yellowstone - 10 - 1000000 - 150
+Xinjiang_Park - 9 - 900000 - 100
+Egeholm_Slotspark - 6 - 2000 - 100
+Dyrehaven - 5 - 2000 - 200
+Oestre_anlaeg - 2 - 500 - 0
