@@ -1,18 +1,18 @@
-Netflix series - category 1 and category 2.
-Luther - Thriller, Crime;
-Homeland - Crime, Drama;
-iZombie - Comedy, Crime;
-Castlevania - Animation, Supernatural;
-Borderline - Mockumentary, Comedy;
-Mindhunter - Thriller, Crime;
-Atypical - Family, Drama;
-Ozark - Crime, Family;
-Archer - Animation, Comedy;
-Gotham - Supernatural, Superhero;
-Disenchanted - Animation, Comedy;
-Sherlock - Crime, Detective;
-Glow - Drama, Tragic;
-Norsemen - Comedy, Nordic;
-Suits - Drama, Courtroom;
-Narcos - Drama, Drugs;
-Shameless - Tragic, Comedy;
+Name of series  Category 1      Category 2.
+Luther          - Thriller      - Crime
+Homeland        - Crime         - Drama
+iZombie         - Comedy        - Crime
+Castlevania     - Animation     - Supernatural
+Borderline      - Mockumentary  - Comedy
+Mindhunter      - Thriller      - Crime
+Atypical        - Family        - Drama
+Ozark           - Crime         - Family
+Archer          - Animation     - Comedy
+Gotham          - Supernatural  - Superhero
+Disenchanted    - Animation     - Comedy
+Sherlock        - Crime         - Detective
+Glow            - Drama         - Tragic
+Norsemen        - Comedy        - Nordic
+Suits           - Drama         - Courtroom
+Narcos          - Drama         - Drugs
+Shameless       - Tragic        - Comedy
