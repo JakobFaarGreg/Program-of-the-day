@@ -1,2 +1,2 @@
-
+# Ignore all .out files when pushing and pulling.
 *.out
