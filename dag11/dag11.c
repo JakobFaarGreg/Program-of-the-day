@@ -1,3 +1,4 @@
+/* Skal kunne aabne en fil og skrive til den, hvis filen har indhold skal brugeren bekraefte at de vil tilfoeje til den */
 #include <stdio.h>
 #include <stdlib.h>
 #define MAX_STRING_LENGTH 100
@@ -9,7 +10,7 @@ int main() {
     char input_string[MAX_STRING_LENGTH];
     int yesNo = 0;
 
-    dag11_ptr = fopen("dag11.txt", "w");
+    dag11_ptr = fopen("dag11.txt", "a");
     if (dag11_ptr != NULL) {
         if (is_file_empty(dag11_ptr)) {
             printf("Type out what to add to file 'dag11.txt:\n");
@@ -46,7 +47,7 @@ int is_file_empty(FILE *file) {
     /* Set the file cursor position to the end of the file and read file size in bytes */
     fseek(file, 0, SEEK_END);
     file_size = ftell(file);
-
+    printf("File size is currently = %d bytes\n", file_size);
     if (file_size == 0) {
         /* File exists, but is empty - also reset the cursor to the start of the file */
         fseek(file, 0, SEEK_SET);
