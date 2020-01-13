@@ -8,3 +8,5 @@ Ideer:
 Stable korthus - et randomized tal bestemmer om huset falder eller ej
 
 Spille Gris - spillet hvor man kaster en plastik gris op i luften.
+
+Sortere efter brugerspecificeret tekststreng, f.eks. Comedy eller Crime i dag12
