@@ -12,10 +12,13 @@ struct wing {
 typedef struct wing wing;
 wing array[NUMBER_OF_WINGS];
 
+char* prompt_for_name();
+void print_name_list();
+
 int main() {
     FILE *file_pointer;
     int i = 0;
-    char userInput[NAME_SIZE], ch = '0';
+    char *userInput, ch = '0';
 
     /* Her laver jeg en filpointer der peger på filen wing.txt og er i read tilstand. */
     file_pointer = fopen("wing.txt", "r");
@@ -29,18 +32,36 @@ int main() {
             fscanf(file_pointer, " %s - %d - %d - %d", array[i].name, &array[i].size, &array[i].productionCost, &array[i].salesPrice);
         }
     }
+    /* Her printer jeg en liste over de vinger jeg har i tekstdokumentet. */
+    print_name_list();
+
     /* Her prompter jeg brugeren for navnet på vingen, personen vil vide mere om. */
-    printf("What type of name do you want to search for?\n");
-    scanf(" %s", userInput);
+    userInput = prompt_for_name();
 
     /* Her printer jeg kun den ene vinge, hvis navn matcher tekststrengen fra brugeren. */
     for (i = 0; i < NUMBER_OF_WINGS; i++){
         if (strcmp(array[i].name, userInput) == 0){
-            printf("%s the wing you wanted to know about\n", userInput);
+            printf("The wing you wanted to know about, %s,\n", userInput);
             printf("Is %d meters long, it costs %d DKK to make and is sold at %d DKK\n", array[i].size, array[i].productionCost, array[i].salesPrice);
         }
     }
     /* Her lukker jeg filpointeren. */
     fclose(file_pointer);
     return EXIT_SUCCESS;
+}
+
+void print_name_list(){
+    int i = 0;
+    printf("This is a list of Wing names: \n");
+    for (i = 0; i < NUMBER_OF_WINGS; i++){
+        printf("%s\n", array[i].name);
+    }
+}
+
+char* prompt_for_name(){
+    char *name;
+    name = (char*) calloc(NUMBER_OF_WINGS, sizeof(char));
+    printf("Type out the wing you want to know more about: \n");
+    scanf(" %s", name);
+    return name;
 }
