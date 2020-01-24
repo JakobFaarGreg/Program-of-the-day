@@ -1,0 +1,6 @@
+Person1 -   180 -   30
+Person2 -   200 -   29
+Person3 -   110 -   10
+Person4 -   130 -   12
+Person5 -   183 -   23
+Person6 -   139 -   14
